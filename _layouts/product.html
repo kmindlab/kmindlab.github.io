@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<div class="section-padding">
+    <div class="container-max">
+        <!-- Product Header -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-2xl mb-6">
+                <img src="{{ page.icon | relative_url }}" alt="{{ page.name }}" class="w-12 h-12" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="text-3xl" style="display: none;">🚀</div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">{{ page.name }}</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">{{ page.description }}</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{ page.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    立即安装
+                </a>
+                <a href="#features" class="btn-secondary">
+                    了解功能
+                </a>
+            </div>
+        </div>
+        
+        <!-- Product Screenshots -->
+        {% if page.screenshots and page.screenshots.size > 0 %}
+        <div class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {% for screenshot in page.screenshots %}
+                <div class="card">
+                    <img src="{{ screenshot | relative_url }}" alt="{{ page.name }} 截图" class="w-full h-64 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="p-8 text-center" style="display: none;">
+                        <div class="text-6xl mb-4">📱</div>
+                        <p class="text-gray-500">产品截图</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Features Section -->
+        {% if page.features and page.features.size > 0 %}
+        <section id="features" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">核心功能</h2>
+                <p class="text-xl text-gray-600">让您的浏览体验更加高效便捷</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {% for feature in page.features %}
+                <div class="card p-8 animate-fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center text-2xl">
+                                {{ feature.icon }}
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ feature.title }}</h3>
+                            <p class="text-gray-600 leading-relaxed">{{ feature.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+        
+        <!-- Content -->
+        {% if content and content != empty %}
+        <div class="prose prose-lg max-w-none mb-16">
+            {{ content }}
+        </div>
+        {% endif %}
+        
+        <!-- CTA Section -->
+        <div class="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">准备好体验了吗？</h2>
+            <p class="text-xl mb-8 opacity-90">立即安装 {{ page.name }}，让您的标签页管理更加智能高效</p>
+            <a href="{{ page.download_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                前往 Chrome 网上应用店
+            </a>
+        </div>
+    </div>
+</div>

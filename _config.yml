@@ -1,0 +1,56 @@
+# Site settings
+title: kmindlab
+description: 专注开发实用软件工具
+baseurl: ""
+url: "https://kmindlab.github.io"
+
+# Author settings
+author:
+  name: "kmindlab"
+  email: "contact@kmindlab.com"
+  bio: "致力于开发提升用户体验的软件工具"
+  avatar: "/assets/images/avatar.jpg"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .trae/
+
+# Sass configuration
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
