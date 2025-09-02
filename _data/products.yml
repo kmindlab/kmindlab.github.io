@@ -1,0 +1,22 @@
+- id: smart-tab-manager
+  name: "智能标签管理"
+  description: "全自动标签页整理工具"
+  category: "Chrome扩展"
+  download_url: "https://chromewebstore.google.com/detail/smart-tab-manager/pgcammgkgbpbdchcfocijooacojecdbi"
+  icon: "/assets/images/smart-tab-manager-icon.png"
+  screenshots:
+    - "/assets/images/smart-tab-manager-1.png"
+    - "/assets/images/smart-tab-manager-2.png"
+  features:
+    - title: "自动分组"
+      description: "自动检测域名并根据自定义规则将标签页自动分组，无需手动干预，看着你的标签页自动整理！"
+      icon: "🔄"
+    - title: "自动排序"
+      description: "按你定义规则将标签分组进行排序，保持你的使用习惯"
+      icon: "📋"
+    - title: "自定义规则"
+      description: "支持URL模式、关键词和正则匹配等自定义规则，完全按照你的需求分组标签页"
+      icon: "⚙️"
+    - title: "标签管理"
+      description: "自动更新、拖拽排序、批量操作等强大的标签管理功能"
+      icon: "📁"

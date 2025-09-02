@@ -1,0 +1,59 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container-max">
+        <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="{{ '/' | relative_url }}" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">K</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">{{ site.title }}</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}text-primary-600 border-b-2 border-primary-600{% else %}text-gray-500 hover:text-gray-900{% endif %} px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        首页
+                    </a>
+                    <a href="{{ '/products/smart-tab-manager/' | relative_url }}" class="{% if page.url contains '/products/' %}text-primary-600 border-b-2 border-primary-600{% else %}text-gray-500 hover:text-gray-900{% endif %} px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        产品
+                    </a>
+                    <a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}text-primary-600 border-b-2 border-primary-600{% else %}text-gray-500 hover:text-gray-900{% endif %} px-3 py-2 text-sm font-medium transition-colors duration-200">
+                        关于
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">打开主菜单</span>
+                    <!-- Menu icon -->
+                    <svg class="menu-icon block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Close icon -->
+                    <svg class="close-icon hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}bg-primary-50 border-primary-500 text-primary-700{% else %}border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700{% endif %} block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-colors duration-200">
+                    首页
+                </a>
+                <a href="{{ '/products/smart-tab-manager/' | relative_url }}" class="{% if page.url contains '/products/' %}bg-primary-50 border-primary-500 text-primary-700{% else %}border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700{% endif %} block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-colors duration-200">
+                    产品
+                </a>
+                <a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}bg-primary-50 border-primary-500 text-primary-700{% else %}border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700{% endif %} block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition-colors duration-200">
+                    关于
+                </a>
+            </div>
+        </div>
+    </nav>
