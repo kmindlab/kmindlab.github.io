@@ -1,23 +1,15 @@
 {
-  "name": "kmindlab-website",
-  "version": "1.0.0",
-  "description": "kmindlab静态个人主页",
-  "main": "index.js",
+  "name": "kmindlab-site",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "KMindLab static bilingual product studio",
   "scripts": {
-    "build-css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
-    "build": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
-    "serve": "bundle exec jekyll serve",
-    "build-site": "bundle exec jekyll build"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "check:browser": "node scripts/browser-check.mjs"
   },
-  "keywords": [
-    "jekyll",
-    "static-site",
-    "portfolio"
-  ],
-  "author": "kmindlab",
-  "license": "MIT",
- "devDependencies": {
-    "tailwindcss": "^3.4.0",
-    "@tailwindcss/typography": "^0.5.10"
+  "engines": {
+    "node": ">=22"
   }
 }
