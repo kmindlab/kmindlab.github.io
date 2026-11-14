@@ -56,3 +56,7 @@ GitHub Actions deploys **main only**. Pull requests run the generator and output
 ## Social previews
 
 A 1200×630 branded JPEG card is checked into `assets/og-brand.jpg` and referenced in Open Graph/Twitter metadata. This avoids the compatibility limitations of SVG-only social previews.
+
+## Visual refresh (2026-11-14)
+
+Homepage and both product heroes use a cohesive soft-blue/lavender design system, light gradients, stacked browser windows, branded product icons and harmonized cards. Product graphics use real AskThem screenshot and a CSS-rendered tab-group browser display based on the supplied tab management reference. The page no longer displays 'concept illustration' or 'product mockup' labels. The contact address throughout the site is contact@kmindlab.com. The old green-based palette has been replaced.

@@ -37,6 +37,10 @@ try{
     assert.equal(await page.locator('html').getAttribute('lang'),t.language,t.name+' locale');
     assert.equal(await page.locator('h1').count(),1,t.name+' h1 count');
     const title=await page.title();assert.ok(title.includes('KMindLab'),t.name+' title');
+    const emailLinks=await page.locator('a[href="mailto:contact@kmindlab.com"]').count();
+    assert.ok(emailLinks>=1,t.name+' missing contact link');
+    assert.equal(await page.locator('.visual-caption').count(),0,t.name+' redundant illustration caption');
+
     const measured=await page.evaluate(()=>({
       scroll:document.documentElement.scrollWidth,
       client:document.documentElement.clientWidth,
