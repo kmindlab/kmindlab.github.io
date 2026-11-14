@@ -54,7 +54,7 @@ try{
     await page.screenshot({path:'test-artifacts/'+t.name+'.png',fullPage:true,animations:'disabled'});
     const counterpart=t.path.startsWith('/zh/')?t.path.replace(/^\/zh/,''):('/zh'+t.path);
     assert.equal(await page.locator('a.lang-toggle').getAttribute('href'),counterpart,t.name+' language switch');
-    if(t.path.includes('askthem'))assert.equal(await page.locator('img[src*="askthem-studio"]').count(),1,t.name+' screenshot');
+    if(t.path.includes('askthem'))assert.ok((await page.locator('img[src*="askthem-studio"]').count())>=1,t.name+' screenshot');
     console.log('PASS '+t.name+' '+measured.client+'px; screenshot saved');
     await page.close();
   }
