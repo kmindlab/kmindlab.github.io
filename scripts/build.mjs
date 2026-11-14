@@ -38,7 +38,7 @@ const ld=[...(opts.schema||[])];return `<!doctype html>
 <html lang="${l==="zh"?"zh-CN":"en"}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-${svgalt}
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f7f8ff">
 <title>${e(opts.title)}</title>
 <meta name="description" content="${e(opts.description)}">
