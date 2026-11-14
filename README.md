@@ -18,3 +18,7 @@ See [REDESIGN.md](REDESIGN.md) for architecture, SEO/GEO, release validation, an
 - `dist/` — generated site; not committed.
 
 Legacy Jekyll version remains available through Git history.
+
+### Preview screenshots and browser QA
+
+The PR GitHub Actions run installs Playwright for CI only, checks responsive layouts and navigation in Chromium, and uploads desktop/mobile screenshots as the `kmindlab-visual-review-*` artifact. This does not deploy the PR to the public website.

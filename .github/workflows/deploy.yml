@@ -23,6 +23,18 @@ jobs:
         run: npm run build
       - name: Verify SEO output
         run: npm run check
+      - name: Install browser QA tools
+        run: |
+          npm install --no-save playwright@1.65.0 --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Browser QA and screenshots
+        run: npm run check:browser
+      - name: Upload visual review screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: kmindlab-visual-review-${{ github.sha }}
+          path: test-artifacts/
+          retention-days: 14
       - name: Upload website preview artifact
         uses: actions/upload-artifact@v4
         with:

@@ -1,6 +1,6 @@
 // KMindLab deterministic, dependency-free static site generator.
 // Run: node scripts/build.mjs
-import {mkdirSync, writeFileSync, rmSync, readFileSync} from 'node:fs';
+import {mkdirSync, writeFileSync, rmSync, readFileSync, copyFileSync, readdirSync} from 'node:fs';
 import {dirname,join} from 'node:path';
 const S="https://www.kmindlab.com";
 const LINKS={"ask":"https://chromewebstore.google.com/detail/askthem/omgahblijbpiimjijhgeplngdablmoob","tab":"https://chromewebstore.google.com/detail/smart-tab-manager/pgcammgkgbpbdchcfocijooacojecdbi","askSite":"https://askthem.kmindlab.com/","github":"https://github.com/kmindlab"};
@@ -105,4 +105,10 @@ out["assets/og.svg"]=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" heigh
 return out}
 rmSync('dist',{recursive:true,force:true});
 for(const [p,content] of Object.entries(generate())){const filepath=join('dist',p);mkdirSync(dirname(filepath),{recursive:true});writeFileSync(filepath,content);}
-console.log('Built',Object.keys(generate()).length,'static files in dist/');
+for (const folder of ['assets/screenshots','assets/icons']) {
+  for (const name of readdirSync(folder)) {
+    const from=join(folder,name), to=join('dist',folder,name);
+    mkdirSync(dirname(to),{recursive:true});copyFileSync(from,to);
+  }
+}
+console.log('Built',Object.keys(generate()).length,'static files plus image assets in dist/');
