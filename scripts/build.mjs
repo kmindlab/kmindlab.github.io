@@ -49,8 +49,8 @@ const ld=[...(opts.schema||[])];return `<!doctype html>
 <link rel="alternate" hreflang="x-default" href="${S+href("en",route)}">
 <meta property="og:type" content="${opts.kind==="product"?"product":"website"}"><meta property="og:site_name" content="KMindLab">
 <meta property="og:title" content="${e(opts.title)}"><meta property="og:description" content="${e(opts.description)}"><meta property="og:url" content="${url}">
-<meta property="og:locale" content="${l==="zh"?"zh_CN":"en_US"}"><meta property="og:image" content="${S}/assets/og.svg">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${e(opts.title)}"><meta name="twitter:description" content="${e(opts.description)}">
+<meta property="og:locale" content="${l==="zh"?"zh_CN":"en_US"}"><meta property="og:image" content="${S}/assets/og-brand.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="KMindLab — Small tools. A clearer day.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${S}/assets/og-brand.jpg"><meta name="twitter:title" content="${e(opts.title)}"><meta name="twitter:description" content="${e(opts.description)}">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css">
 ${ld.map(dataScript).join("\n")}
 </head>
@@ -111,4 +111,5 @@ for (const folder of ['assets/screenshots','assets/icons']) {
     mkdirSync(dirname(to),{recursive:true});copyFileSync(from,to);
   }
 }
+copyFileSync('assets/og-brand.jpg','dist/assets/og-brand.jpg');
 console.log('Built',Object.keys(generate()).length,'static files plus image assets in dist/');

@@ -52,3 +52,7 @@ GitHub Actions deploys **main only**. Pull requests run the generator and output
 - Smart Tab Manager current store lists v1.2.3. No hardcoded version appears in its landing page.
 - The `askthem.kmindlab.com` address is not configured in Cloudflare DNS; the new brand site does **not** link to an unverified domain.
 - DNS: `www.kmindlab.com` resolves via CNAME to `kmindlab.github.io`. Naked `kmindlab.com` has no website A/AAAA record. Verify and configure apex DNS on release authorization without touching MX/TXT email records.
+
+## Social previews
+
+A 1200×630 branded JPEG card is checked into `assets/og-brand.jpg` and referenced in Open Graph/Twitter metadata. This avoids the compatibility limitations of SVG-only social previews.
