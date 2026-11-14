@@ -20,7 +20,7 @@ npx serve dist # optional local server
 - `scripts/check.mjs`: basic output/SEO regression checks.
 - Product sources reviewed: private repositories `kmindlab/askthem` and `kmindlab/SmartTabManager`. Public HTML does not disclose private code.
 
-To add a product: add an entry in `P` in `scripts/build.mjs`, providing both English and Chinese copy and FAQ. The generator automatically creates product landing pages, homepage cards, reciprocal hreflang URLs, structured data and sitemap entries. **Also add the new product route to `siteMap()`'s routes list**. Do not claim capabilities not supported by the released extension.
+To add a product: add an entry in `P` in `scripts/build.mjs`, providing both English and Chinese copy and FAQ. The generator automatically creates product landing pages, homepage cards, reciprocal hreflang URLs, structured data and sitemap entries. The generator also includes the new product in the XML sitemap automatically. Do not claim capabilities not supported by the released extension.
 
 ## SEO and GEO design
 
