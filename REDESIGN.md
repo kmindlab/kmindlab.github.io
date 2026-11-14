@@ -31,7 +31,7 @@ To add a product: add an entry in `P` in `scripts/build.mjs`, providing both Eng
 - Robots and XML sitemap; `llms.txt` as **optional navigation**, not an indexing guarantee.
 - Preserved legacy `/products/smart-tab-manager/` URLs via client/meta redirect to `/products/tabgroup/` (GitHub Pages cannot issue an actual 301 without CDN/edge configuration).
 - Product limitations documented accurately: AskThem depends on individual AI websites, and tabGroup is rule-based; no fabricated ratings, subscriber counts or AI classification claims.
-- Lightweight CSS concept drawings; **replace with real, permission-checked product screenshots** prior to final launch if available.
+- Lightweight CSS concept drawings; **augment with additional real, permission-checked product screenshots** prior to final launch if available.
 
 ### Pre-launch checklist
 
@@ -45,3 +45,10 @@ To add a product: add an entry in `P` in `scripts/build.mjs`, providing both Eng
 ## Production deployment
 
 GitHub Actions deploys **main only**. Pull requests run the generator and output checks, upload the generated `dist/` as a review artifact, and do not modify production.
+
+## Deployment / version verification (2026-11-14)
+
+- Public Chrome Web Store lists AskThem v1.1.4; supplied true Studio screenshots are from unpublished/development source v1.7.9 and explicitly labeled as such.
+- Smart Tab Manager current store lists v1.2.3. No hardcoded version appears in its landing page.
+- The `askthem.kmindlab.com` address is not configured in Cloudflare DNS; the new brand site does **not** link to an unverified domain.
+- DNS: `www.kmindlab.com` resolves via CNAME to `kmindlab.github.io`. Naked `kmindlab.com` has no website A/AAAA record. Verify and configure apex DNS on release authorization without touching MX/TXT email records.
