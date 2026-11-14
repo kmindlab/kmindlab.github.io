@@ -60,3 +60,7 @@ A 1200×630 branded JPEG card is checked into `assets/og-brand.jpg` and referenc
 ## Visual refresh (2026-11-14)
 
 Homepage and both product heroes use a cohesive soft-blue/lavender design system, light gradients, stacked browser windows, branded product icons and harmonized cards. Product graphics use real AskThem screenshot and a CSS-rendered tab-group browser display based on the supplied tab management reference. The page no longer displays 'concept illustration' or 'product mockup' labels. The contact address throughout the site is contact@kmindlab.com. The old green-based palette has been replaced.
+
+## Brand identity: owner-selected logo
+
+On 2026-11-14, the owner selected the original four softly rotated tiles (charcoal, purple, mint, charcoal) and lowercase `kmindlab.` wordmark. The shared `logo()` component in `scripts/build.mjs` now uses that mark on the site header and footer; `assets/logo.svg` is the matching favicon/structured-data icon, and `assets/brand-wordmark.svg` is an exportable vector wordmark. Avoid replacing it with the blue gradient M-wave variant unless explicitly requested.
